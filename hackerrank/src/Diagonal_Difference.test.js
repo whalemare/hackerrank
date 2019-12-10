@@ -18,6 +18,12 @@ function diagonalDifference(arr) {
   return Math.abs(left - right)
 }
 
+test("simple case", () => {
+  const result = diagonalDifference([
+    [1, 2, 3],
+    [4, 5, 6],
+    [9, 8, 9]
+  ])
 
-
-
+  expect(result).toBe(15)
+})
