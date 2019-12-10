@@ -11,10 +11,9 @@ function diagonalDifference(arr) {
   let right = 0
   for (let i = 0; i < arr.length; i++) {
     left += arr[i][i]
-    right += arr[2-i][i]
+    right += arr[arr.length - 1 - i][i]
   } 
-  console.log(left)
-  console.log(right)
+
   return Math.abs(left - right)
 }
 
@@ -25,5 +24,16 @@ test("simple case", () => {
     [9, 8, 9]
   ])
 
-  expect(result).toBe(15)
+  expect(result).toBe(Math.abs(1 + 5 + 9 - (3 + 5 + 9)))
+})
+
+test("case with 4 dimension", () => {
+  const result = diagonalDifference([
+    [1, 2, 3, 4],
+    [4, 5, 6, 7],
+    [9, 8, 9, 4],
+    [1, 1, 2, 3],
+  ])
+
+  expect(result).toBe(Math.abs(1 + 5 + 9  + 3 - (4 + 6 + 8 + 1)))
 })
