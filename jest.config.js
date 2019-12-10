@@ -6,5 +6,4 @@ module.exports = {
     "!**/vendor/**"
   ],
   verbose: true,
-  moduleFileExtensions: [...defaults.moduleFileExtensions, 'ts', 'tsx'],
 }
